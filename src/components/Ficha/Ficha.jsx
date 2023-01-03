@@ -1,4 +1,5 @@
 import React from 'react';
+import './Ficha.css'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -16,8 +17,12 @@ import pergaminho from '../../images/pergaminho_naruto.png';
 export default function Ficha() {
 
   const [clan, setClan] = React.useState('');
+  const [spec, setSpec] = React.useState('');
+
   const handleChange = (event) => {
     setClan(event.target.value);
+    setSpec(event.target.value);
+    setSpec(event.target.value);
   };
 
   const clans = [
@@ -89,11 +94,11 @@ export default function Ficha() {
           <Typography gutterBottom variant="h5" component="div">
             Atualização de Ficha
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" className="ficha__db">
             <Box display="flex" alignItems="center">
               <InputLabel>Clã: </InputLabel>
               <FormControl>
-                <Select value='Nenhum' onChange={handleChange}>
+                <Select value={clan} onChange={handleChange}>
                   {clans.map(clan => (
                     <MenuItem key={clan} value={clan}>
                       {clan}
@@ -105,12 +110,12 @@ export default function Ficha() {
             </Box>
 
             <Box display="flex" alignItems="center">
-              <InputLabel>Spec: </InputLabel>
+              <InputLabel>Especialização:</InputLabel>
               <FormControl>
-                <Select value='Nenhuma' onChange={handleChange}>
-                  {specs.map(specs => (
-                    <MenuItem key={specs} value={specs}>
-                      {specs}
+                <Select value={clan} onChange={handleChange}>
+                  {clans.map(clan => (
+                    <MenuItem key={clan} value={clan}>
+                      {clan}
                     </MenuItem>
                   ))}
                 </Select>
@@ -119,19 +124,18 @@ export default function Ficha() {
             </Box>
 
             <Box display="flex" alignItems="center">
-              <InputLabel>Perícias: </InputLabel>
+              <InputLabel>Clã: </InputLabel>
               <FormControl>
-                <Select value='Nenhuma' onChange={handleChange}>
-                  {pericias.map(pericias => (
-                    <MenuItem key={pericias} value={pericias}>
-                      {pericias}
+                <Select value={clan} onChange={handleChange}>
+                  {clans.map(clan => (
+                    <MenuItem key={clan} value={clan}>
+                      {clan}
                     </MenuItem>
                   ))}
                 </Select>
               </FormControl>
               <Button size="small">Add</Button>
             </Box>
-
 
           </Typography>
         </CardContent>
