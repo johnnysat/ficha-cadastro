@@ -6,12 +6,22 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import pergaminho from '../../images/pergaminho_naruto.png';
 
 
 export default function Ficha() {
 
+  const [clan, setClan] = React.useState('');
+  const handleChange = (event) => {
+    setClan(event.target.value);
+  };
+
   const clans = [
+    'Nenhum',
     'Aburame',
     'Akimichi',
     'Hozuki',
@@ -27,6 +37,7 @@ export default function Ficha() {
   ]
 
   const specs = [
+    'Nenhuma',
     'Genjutsu',
     'Ninjutsu',
     'Taijutsu',
@@ -39,6 +50,7 @@ export default function Ficha() {
   ];
 
   const pericias = [
+    'Nenhuma',
     'Precisão',
     'Atleta',
     'Tolerância à Dor',
@@ -78,41 +90,49 @@ export default function Ficha() {
             Atualização de Ficha
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <div className="ficha__clans">
-              <label>Clã: </label>
-              <select name="clans" id="clans" >
-                {clans.map(clans => (
-                  <option key={clans} value={clans}>
-                    {clans}
-                  </option>
-                ))}
-              </select>
-            <Button size="small">Add</Button>
-            </div>
+            <Box display="flex" alignItems="center">
+              <InputLabel>Clã: </InputLabel>
+              <FormControl>
+                <Select value='Nenhum' onChange={handleChange}>
+                  {clans.map(clan => (
+                    <MenuItem key={clan} value={clan}>
+                      {clan}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <Button size="small">Add</Button>
+            </Box>
 
-            <div>
-              <label>Especializações: </label>
-              <select name="specs" id="specs" >
-                {specs.map(specs => (
-                  <option key={specs} value={specs}>
-                    {specs}
-                  </option>
-                ))}
-              </select>
-            <Button size="small">Add</Button>
-            </div>
+            <Box display="flex" alignItems="center">
+              <InputLabel>Spec: </InputLabel>
+              <FormControl>
+                <Select value='Nenhuma' onChange={handleChange}>
+                  {specs.map(specs => (
+                    <MenuItem key={specs} value={specs}>
+                      {specs}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <Button size="small">Add</Button>
+            </Box>
 
-            <div>
-              <label>Perícias: </label>
-              <select name="pericias" id="pericias" >
-                {pericias.map(pericias => (
-                  <option key={pericias} value={pericias}>
-                    {pericias}
-                  </option>
-                ))}
-              </select>
-            <Button size="small">Add</Button>
-            </div>
+            <Box display="flex" alignItems="center">
+              <InputLabel>Perícias: </InputLabel>
+              <FormControl>
+                <Select value='Nenhuma' onChange={handleChange}>
+                  {pericias.map(pericias => (
+                    <MenuItem key={pericias} value={pericias}>
+                      {pericias}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <Button size="small">Add</Button>
+            </Box>
+
+
           </Typography>
         </CardContent>
         <CardActions>
@@ -120,7 +140,7 @@ export default function Ficha() {
           <Button size="small">Limpar</Button>
         </CardActions>
       </Card>
-    
+
     </div>
   )
 }
