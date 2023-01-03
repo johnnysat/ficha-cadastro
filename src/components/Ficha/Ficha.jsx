@@ -1,9 +1,10 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
@@ -85,6 +86,7 @@ export default function Ficha() {
                   </option>
                 ))}
               </select>
+            <Button size="small">Add</Button>
             </div>
 
             <div>
@@ -96,6 +98,7 @@ export default function Ficha() {
                   </option>
                 ))}
               </select>
+            <Button size="small">Add</Button>
             </div>
 
             <div>
@@ -107,6 +110,7 @@ export default function Ficha() {
                   </option>
                 ))}
               </select>
+            <Button size="small">Add</Button>
             </div>
           </Typography>
         </CardContent>
