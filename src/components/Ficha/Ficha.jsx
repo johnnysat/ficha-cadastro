@@ -30,6 +30,32 @@ export default function Ficha() {
     'Fuuinjutsu',
   ];
 
+  const pericias = [
+    'Precisão', 
+    'Atleta',
+    'Tolerância à Dor',
+    'Memória',
+    'Observador',
+    'Herbologia',
+    'Zoologia',
+    'Anatomia',
+    'Quimica',
+    'Rastrear',
+    'Assassino',
+    'Tortura',
+    'Culinária',
+    'Resiliente',
+    'Especialista em Veneno',
+    'Resistência a Veneno',
+    'Geneticista',
+    'Furtivo',
+    'Fôlego',
+    'Ambidestria',
+    'Carisma',
+    'Combatente',
+    'Tecnologia',
+  ];
+
   return (
     <div>
       <h1>Atualização de Ficha</h1>
@@ -45,6 +71,7 @@ export default function Ficha() {
         </select>
       </div>
 
+      <div>
       <label>Especializações:</label>
       <select name="specs" id="specs" >
         {specs.map(specs => (
@@ -53,6 +80,20 @@ export default function Ficha() {
           </option>
         ))}
       </select>
+      </div>
+
+      <div>
+      <label>Perícias:</label>
+      <select name="pericias" id="pericias" >
+        {pericias.map(pericias => (
+          <option key={pericias} value={pericias}>
+            {pericias}
+          </option>
+        ))}
+      </select>
+      </div>
+
+
     </div>
   )
 }

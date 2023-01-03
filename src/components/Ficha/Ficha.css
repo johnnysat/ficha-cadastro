@@ -1,7 +1,3 @@
-.ficha__clans {
-  margin: 10px;
-}
-
-.ficha__clans select {
-  margin: 10px;
+select {
+  text-align: center;
 }
