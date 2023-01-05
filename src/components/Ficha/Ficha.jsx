@@ -94,7 +94,7 @@ export default function Ficha() {
         <CardMedia
           sx={{ height: 140 }}
           image={pergaminho}
-          title="green iguana"
+          title="Naruto com Pergaminho"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
