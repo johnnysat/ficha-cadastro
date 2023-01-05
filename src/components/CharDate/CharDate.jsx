@@ -16,6 +16,7 @@ export default function CharDate() {
       <CssBaseline />
       <Container fixed>
         <Box className="container__box" sx={{ bgcolor: '#', height: '61vh' }}>
+          <div className="container__header">
         <TextField id="outlined-basic" label="Nome do Personagem" variant="outlined" />
           <FormControl>
             <FormLabel id="demo-row-radio-buttons-group-label">Rank</FormLabel>
@@ -29,9 +30,12 @@ export default function CharDate() {
               <FormControlLabel value="Jounnin" control={<Radio />} label="Jounnin" />
               <FormControlLabel value="Tokubetsu" control={<Radio />} label="Tokubetsu" />
               <FormControlLabel value="Sannin" control={<Radio />} label="Sannin" />
-
             </RadioGroup>
           </FormControl>
+          </div>
+          
+          
+        
         </Box>
       </Container>
     </React.Fragment>
