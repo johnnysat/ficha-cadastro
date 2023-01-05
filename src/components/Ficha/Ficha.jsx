@@ -15,14 +15,20 @@ import pergaminho from '../../images/pergaminho_naruto.png';
 
 
 export default function Ficha() {
-
   const [clan, setClan] = React.useState('');
   const [spec, setSpec] = React.useState('');
+  const [pericia, setPericia] = React.useState('');
 
-  const handleChange = (event) => {
+  const handleChangeClan = (event) => {
     setClan(event.target.value);
+  };
+
+  const handleChangeSpec = (event) => {
     setSpec(event.target.value);
-    setSpec(event.target.value);
+  };
+
+  const handleChangePericia = (event) => {
+    setPericia(event.target.value);
   };
 
   const clans = [
@@ -96,9 +102,9 @@ export default function Ficha() {
           </Typography>
           <Typography variant="body2" color="text.secondary" className="ficha__db">
             <Box display="flex" alignItems="center">
-              <InputLabel>Clã: </InputLabel>
+              <InputLabel className='input__clan'>Clã: </InputLabel>
               <FormControl>
-                <Select value={clan} onChange={handleChange}>
+                <Select size="small" value={clan} onChange={handleChangeClan}>
                   {clans.map(clan => (
                     <MenuItem key={clan} value={clan}>
                       {clan}
@@ -110,12 +116,12 @@ export default function Ficha() {
             </Box>
 
             <Box display="flex" alignItems="center">
-              <InputLabel>Especialização:</InputLabel>
+              <InputLabel className='input__spec'>Especialização:</InputLabel>
               <FormControl>
-                <Select value={clan} onChange={handleChange}>
-                  {clans.map(clan => (
-                    <MenuItem key={clan} value={clan}>
-                      {clan}
+                <Select size="small" value={spec} onChange={handleChangeSpec}>
+                  {specs.map(spec => (
+                    <MenuItem key={spec} value={spec}>
+                      {spec}
                     </MenuItem>
                   ))}
                 </Select>
@@ -124,25 +130,26 @@ export default function Ficha() {
             </Box>
 
             <Box display="flex" alignItems="center">
-              <InputLabel>Clã: </InputLabel>
+              <InputLabel className='input__pericia'>Perícia: </InputLabel>
               <FormControl>
-                <Select value={clan} onChange={handleChange}>
-                  {clans.map(clan => (
-                    <MenuItem key={clan} value={clan}>
-                      {clan}
+                <Select size="small" value={pericia} onChange={handleChangePericia}>
+                  {pericias.map(pericia => (
+                    <MenuItem key={pericia} value={pericia}>
+                      {pericia}
                     </MenuItem>
                   ))}
                 </Select>
               </FormControl>
               <Button size="small">Add</Button>
             </Box>
-
           </Typography>
         </CardContent>
-        <CardActions>
+
+        <CardActions className="card__button">
           <Button size="small">Atualizar</Button>
           <Button size="small">Limpar</Button>
         </CardActions>
+
       </Card>
 
     </div>

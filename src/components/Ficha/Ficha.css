@@ -5,3 +5,8 @@
   width: 100%;
   flex-wrap: wrap;
 }
+
+.card__button {
+  display: flex;
+  justify-content: space-between;
+}
