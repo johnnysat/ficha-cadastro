@@ -12,10 +12,13 @@ export default function AtributesChar({ atb }) {
   const [points, setPoints] = useState(1);
 
   const handleIncrement = () => {
+    if (points <= 10){
     setPoints(points + 1);
+  }
   };
 
   const handleDecrement = () => {
+    if (points >= 1)
     setPoints(points - 1);
   };
 
