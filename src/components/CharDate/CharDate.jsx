@@ -36,18 +36,17 @@ export default function CharDate() {
               </RadioGroup>
             </FormControl>
           </div>
-          <div clasName="atributes__char">
-          <AtributesChar atb={'Força'}/>
-          <AtributesChar atb={'Destreza'}/>
-          <AtributesChar atb={'Chakra'}/>
-          <AtributesChar atb={'Canalização'}/>
-          <AtributesChar atb={'Controle'}/>
-          <AtributesChar atb={'Percepção'}/>
-          <Specs />
+          <div className="container__body">
+            <div className="atributes__char">
+              <AtributesChar atb={'Força'}/>
+              <AtributesChar atb={'Destreza'}/>
+              <AtributesChar atb={'Chakra'}/>
+              <AtributesChar atb={'Canalização'}/>
+              <AtributesChar atb={'Controle'}/>
+              <AtributesChar atb={'Percepção'}/>
+            </div>
+            <Specs />  
           </div>
-
-          
-
         </Box>
       </Container>
     </React.Fragment>

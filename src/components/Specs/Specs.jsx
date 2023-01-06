@@ -11,13 +11,12 @@ const card = (
       <Typography variant="h5" component="div">
         Especializações
       </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        adjective
-      </Typography>
       <Typography variant="body2">
-        well meaning and kindly.
-        <br />
-        {'"a benevolent smile"'}
+        Spec 1 <br />
+        Spec 2 <br />
+        Spec 3 <br />
+        Spec 4 <br />
+        Spec 5 <br />
       </Typography>
     </CardContent>
   </React.Fragment>
@@ -25,7 +24,7 @@ const card = (
 
 export default function Specs() {
   return (
-    <Box sx={{ minWidth: 275 }}>
+    <Box sx={{ width: 250, display: 'inline-block', position: 'absolute', top: 140, right: 350}}>
       <Card variant="outlined">{card}</Card>
     </Box>
   );
