@@ -2,9 +2,7 @@ import React, { useState } from "react"
 import './Atributes.css'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Atributes from '../Atributes/Atributes'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
@@ -14,7 +12,7 @@ export default function AtributesChar({ atb }) {
   const handleIncrement = () => {
     if (points <= 10){
     setPoints(points + 1);
-  }
+    }
   };
 
   const handleDecrement = () => {
@@ -34,8 +32,8 @@ export default function AtributesChar({ atb }) {
               aria-label="Disabled elevation buttons"
               size="small"
             >
-              <Button onClick={handleIncrement}>+</Button>
               <Button onClick={handleDecrement}>-</Button>
+              <Button onClick={handleIncrement}>+</Button>
             </ButtonGroup>
           </ListItem>
         </ListItem>
