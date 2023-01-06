@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './CharDate.css'
 import AtributesChar from '../Atributes/Atributes'
+import Specs from '../Specs/Specs'
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -35,13 +36,17 @@ export default function CharDate() {
               </RadioGroup>
             </FormControl>
           </div>
-
+          <div clasName="atributes__char">
           <AtributesChar atb={'Força'}/>
           <AtributesChar atb={'Destreza'}/>
           <AtributesChar atb={'Chakra'}/>
           <AtributesChar atb={'Canalização'}/>
           <AtributesChar atb={'Controle'}/>
           <AtributesChar atb={'Percepção'}/>
+          <Specs />
+          </div>
+
+          
 
         </Box>
       </Container>
