@@ -2,6 +2,7 @@ import * as React from 'react';
 import './CharDate.css'
 import AtributesChar from '../Atributes/Atributes'
 import Specs from '../Specs/Specs'
+import Percs from '../Percs/Percs'
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -45,7 +46,8 @@ export default function CharDate() {
               <AtributesChar atb={'Controle'}/>
               <AtributesChar atb={'Percepção'}/>
             </div>
-            <Specs />  
+            <Specs /> 
+            <Percs /> 
           </div>
         </Box>
       </Container>
