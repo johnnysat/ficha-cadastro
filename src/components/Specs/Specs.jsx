@@ -24,7 +24,7 @@ const card = (
 
 export default function Specs() {
   return (
-    <Box sx={{ width: 250, display: 'inline-block', position: 'absolute', top: 140, right: 350}}>
+    <Box sx={{ width: 250, display: 'inline-block', position: 'absolute', top: 165, right: 350}}>
       <Card variant="outlined">{card}</Card>
     </Box>
   );

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import AtributesChar from '../Atributes/Atributes'
 import Specs from '../Specs/Specs'
 import Percs from '../Percs/Percs'
@@ -16,6 +16,26 @@ import './CharDate.css'
 
 
 export default function CharDate() {
+  const [rank, setRank] = useState('Gennin');
+  const [attributes, setAttributes] = useState(16);
+
+  function handleRankChange(event) {
+    setRank(event.target.value);
+
+    if (event.target.value === 'Gennin') {
+      setAttributes(16);
+    } else if (event.target.value === 'Chunnin') {
+      setAttributes(26);
+    } else if (event.target.value === 'Jounnin') {
+      setAttributes(36);
+    } else if (event.target.value === 'Tokubetsu') {
+      setAttributes(46);
+    } else if (event.target.value === 'Sannin') {
+      setAttributes(56);
+    }
+  }
+
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -24,20 +44,23 @@ export default function CharDate() {
           <div className="container__header">
             <TextField id="outlined-basic" size="small" label="Nome do Personagem" variant="outlined"
             className="name__char"/>
-            <FormControl>
-              <FormLabel id="demo-row-radio-buttons-group-label">Rank</FormLabel>
-              <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="row-radio-buttons-group"
-              >
-                <FormControlLabel value="Gennin" control={<Radio />} label="Gennin" />
-                <FormControlLabel value="Chunnin" control={<Radio />} label="Chunnin" />
-                <FormControlLabel value="Jounnin" control={<Radio />} label="Jounnin" />
-                <FormControlLabel value="Tokubetsu" control={<Radio />} label="Tokubetsu" />
-                <FormControlLabel value="Sannin" control={<Radio />} label="Sannin" />
-              </RadioGroup>
-            </FormControl>
+<FormControl>
+      <FormLabel id="demo-row-radio-buttons-group-label">Rank</FormLabel>
+      <RadioGroup
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
+        name="row-radio-buttons-group"
+        value={rank}
+        onChange={handleRankChange}
+      >
+        <FormControlLabel value="Gennin" control={<Radio />} label="Gennin" />
+        <FormControlLabel value="Chunnin" control={<Radio />} label="Chunnin" />
+        <FormControlLabel value="Jounnin" control={<Radio />} label="Jounnin" />
+        <FormControlLabel value="Tokubetsu" control={<Radio />} label="Tokubetsu" />
+        <FormControlLabel value="Sannin" control={<Radio />} label="Sannin" />
+      </RadioGroup>
+      <p>Pontos: Pontos/{attributes}</p>
+    </FormControl>
           </div>
           <div className="container__body">
             <div className="atributes__char">
