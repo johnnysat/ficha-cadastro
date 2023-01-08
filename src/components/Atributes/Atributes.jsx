@@ -16,7 +16,7 @@ export default function AtributesChar({ atb }) {
   };
 
   const handleDecrement = () => {
-    if (points >= 1)
+    if (points >= 2)
     setPoints(points - 1);
   };
 
