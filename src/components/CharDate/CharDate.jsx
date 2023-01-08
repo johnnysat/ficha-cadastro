@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './CharDate.css'
 import AtributesChar from '../Atributes/Atributes'
 import Specs from '../Specs/Specs'
 import Percs from '../Percs/Percs'
@@ -12,6 +11,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
+import './CharDate.css'
+
 
 
 export default function CharDate() {
