@@ -21,7 +21,8 @@ export default function CharDate() {
       <Container fixed>
         <Box className="container__box" sx={{ bgcolor: '#', height: '61vh' }}>
           <div className="container__header">
-            <TextField id="outlined-basic" label="Nome do Personagem" variant="outlined" />
+            <TextField id="outlined-basic" size="small" label="Nome do Personagem" variant="outlined"
+            className="name__char"/>
             <FormControl>
               <FormLabel id="demo-row-radio-buttons-group-label">Rank</FormLabel>
               <RadioGroup

@@ -13,6 +13,12 @@
   display: flex;
 }
 
+.name__char {
+  margin-left: 25px;
+  margin-top: 20px;
+  height: 10px;
+}
+
 .atributes__char {
   width: 40%; 
 }
