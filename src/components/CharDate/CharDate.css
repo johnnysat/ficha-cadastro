@@ -14,9 +14,7 @@
 }
 
 .name__char {
-  margin-left: 25px;
-  margin-top: 20px;
-  height: 10px;
+  margin: 20px !important;
 }
 
 .atributes__char {
