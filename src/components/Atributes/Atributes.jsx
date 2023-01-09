@@ -25,16 +25,17 @@ export default function AtributesChar({ atb }) {
       <List className="list__atributes">
         <ListItem>
           <ListItem>
-            <ListItemText primary={`${atb} - ${points}`} />
-            <ButtonGroup
-              disableElevation
-              variant="contained"
-              aria-label="Disabled elevation buttons"
-              size="small"
-            >
-              <Button onClick={handleDecrement}>-</Button>
-              <Button onClick={handleIncrement}>+</Button>
-            </ButtonGroup>
+            <ListItemText primary={atb} />
+              <ListItemText className="atb__char" primary={points} />
+              <ButtonGroup
+                disableElevation
+                variant="contained"
+                aria-label="Disabled elevation buttons"
+                size="small"
+              >
+                <Button onClick={handleDecrement}>-</Button>
+                <Button onClick={handleIncrement}>+</Button>
+              </ButtonGroup>
           </ListItem>
         </ListItem>
       </List>

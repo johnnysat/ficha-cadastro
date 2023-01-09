@@ -3,6 +3,11 @@
   height: 40px;
 }
 
+.atb__char {
+  position: absolute;
+  right: 120px
+}
+
 .buttons_atributes {
   height: 30px;
 }
