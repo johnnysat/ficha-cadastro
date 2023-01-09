@@ -17,21 +17,21 @@ import './CharDate.css'
 
 export default function CharDate() {
   const [rank, setRank] = useState('Gennin');
-  const [attributes, setAttributes] = useState(16);
+  const [attributesTotal, setAttributesTotal] = useState(16);
 
   function handleRankChange(event) {
     setRank(event.target.value);
 
     if (event.target.value === 'Gennin') {
-      setAttributes(16);
+      setAttributesTotal(16);
     } else if (event.target.value === 'Chunnin') {
-      setAttributes(26);
+      setAttributesTotal(26);
     } else if (event.target.value === 'Jounnin') {
-      setAttributes(36);
+      setAttributesTotal(36);
     } else if (event.target.value === 'Tokubetsu') {
-      setAttributes(46);
+      setAttributesTotal(46);
     } else if (event.target.value === 'Sannin') {
-      setAttributes(56);
+      setAttributesTotal(56);
     }
   }
 
@@ -59,7 +59,7 @@ export default function CharDate() {
         <FormControlLabel value="Tokubetsu" control={<Radio />} label="Tokubetsu" />
         <FormControlLabel value="Sannin" control={<Radio />} label="Sannin" />
       </RadioGroup>
-      <p>Pontos: Pontos/{attributes}</p>
+      <p>Pontos: Pontos/{attributesTotal}</p>
     </FormControl>
           </div>
           <div className="container__body">
