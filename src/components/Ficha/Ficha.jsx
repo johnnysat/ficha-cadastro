@@ -47,46 +47,6 @@ export default function Ficha() {
     'Yamanaka',
   ]
 
-  const specs = [
-    'Nenhuma',
-    'Genjutsu',
-    'Ninjutsu',
-    'Taijutsu',
-    'Doton',
-    'Fuuton',
-    'Katon',
-    'Raiton',
-    'Suiton',
-    'Fuuinjutsu',
-  ];
-
-  const pericias = [
-    'Nenhuma',
-    'Precisão',
-    'Atleta',
-    'Tolerância à Dor',
-    'Memória',
-    'Observador',
-    'Herbologia',
-    'Zoologia',
-    'Anatomia',
-    'Quimica',
-    'Rastrear',
-    'Assassino',
-    'Tortura',
-    'Culinária',
-    'Resiliente',
-    'Especialista em Veneno',
-    'Resistência a Veneno',
-    'Geneticista',
-    'Furtivo',
-    'Fôlego',
-    'Ambidestria',
-    'Carisma',
-    'Combatente',
-    'Tecnologia',
-  ];
-
   return (
     <div>
 
