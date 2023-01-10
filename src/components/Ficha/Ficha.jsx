@@ -50,7 +50,7 @@ export default function Ficha() {
   return (
     <div>
 
-      <Card sx={{ minWidth: 300, minHeight: 380 }}>
+      <Card sx={{ maxWidth: 300, minHeight: 380 }}>
         <CardMedia
           sx={{ height: 140 }}
           image={pergaminho}
@@ -61,11 +61,11 @@ export default function Ficha() {
             Atualização de Ficha
           </Typography>
           <Typography variant="body2" color="text.secondary" className="ficha__db">
-            <Box display="flex" alignItems="center">
-
-            <TextField id="outlined-basic" size="small" label="Nome do Personagem" variant="outlined"
-              className="name__char" />
-              <InputLabel className='input__clan'>Clã: </InputLabel>
+            <Box display="inline-block" alignItems="center">
+              <TextField id="outlined-basic" size="small" label="Nome do Personagem" variant="outlined"
+                className="name__char" />
+                <Box display="flex">
+              <InputLabel  className='input__clan'>Clã: </InputLabel>
               <FormControl>
                 <Select size="small" value={clan} onChange={handleChangeClan}>
                   {clans.map(clan => (
@@ -76,6 +76,7 @@ export default function Ficha() {
                 </Select>
               </FormControl>
               <Button size="small">Add</Button>
+              </Box>
             </Box>
           </Typography>
         </CardContent>

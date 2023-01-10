@@ -10,3 +10,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.name__char {
+  margin: 10px !important;
+  width: 200px;
+
+}
