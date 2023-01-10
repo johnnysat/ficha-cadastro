@@ -11,8 +11,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
 import pergaminho from '../../images/pergaminho_naruto.png';
-
 
 export default function Ficha() {
   const [clan, setClan] = React.useState('');
@@ -102,6 +102,9 @@ export default function Ficha() {
           </Typography>
           <Typography variant="body2" color="text.secondary" className="ficha__db">
             <Box display="flex" alignItems="center">
+
+            <TextField id="outlined-basic" size="small" label="Nome do Personagem" variant="outlined"
+              className="name__char" />
               <InputLabel className='input__clan'>Clã: </InputLabel>
               <FormControl>
                 <Select size="small" value={clan} onChange={handleChangeClan}>

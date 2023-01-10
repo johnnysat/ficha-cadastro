@@ -10,7 +10,6 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import TextField from '@mui/material/TextField';
 import './CharDate.css'
 
 
@@ -42,37 +41,36 @@ export default function CharDate() {
       <Container fixed>
         <Box className="container__box" sx={{ bgcolor: '#', height: '61vh' }}>
           <div className="container__header">
-            <TextField id="outlined-basic" size="small" label="Nome do Personagem" variant="outlined"
-            className="name__char"/>
-<FormControl>
-      <FormLabel id="demo-row-radio-buttons-group-label">Rank</FormLabel>
-      <RadioGroup
-        row
-        aria-labelledby="demo-row-radio-buttons-group-label"
-        name="row-radio-buttons-group"
-        value={rank}
-        onChange={handleRankChange}
-      >
-        <FormControlLabel value="Gennin" control={<Radio />} label="Gennin" />
-        <FormControlLabel value="Chunnin" control={<Radio />} label="Chunnin" />
-        <FormControlLabel value="Jounnin" control={<Radio />} label="Jounnin" />
-        <FormControlLabel value="Tokubetsu" control={<Radio />} label="Tokubetsu" />
-        <FormControlLabel value="Sannin" control={<Radio />} label="Sannin" />
-      </RadioGroup>
-      <p>Pontos: Pontos/{attributesTotal}</p>
-    </FormControl>
+
+            <FormControl>
+              <FormLabel id="demo-row-radio-buttons-group-label">Rank</FormLabel>
+              <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group"
+                value={rank}
+                onChange={handleRankChange}
+              >
+                <FormControlLabel value="Gennin" control={<Radio />} label="Gennin" />
+                <FormControlLabel value="Chunnin" control={<Radio />} label="Chunnin" />
+                <FormControlLabel value="Jounnin" control={<Radio />} label="Jounnin" />
+                <FormControlLabel value="Tokubetsu" control={<Radio />} label="Tokubetsu" />
+                <FormControlLabel value="Sannin" control={<Radio />} label="Sannin" />
+              </RadioGroup>
+              <p>Pontos: Pontos/{attributesTotal}</p>
+            </FormControl>
           </div>
           <div className="container__body">
             <div className="atributes__char">
-              <AtributesChar atb={'Força'}/>
-              <AtributesChar atb={'Destreza'}/>
-              <AtributesChar atb={'Chakra'}/>
-              <AtributesChar atb={'Canalização'}/>
-              <AtributesChar atb={'Controle'}/>
-              <AtributesChar atb={'Percepção'}/>
+              <AtributesChar atb={'Força'} />
+              <AtributesChar atb={'Destreza'} />
+              <AtributesChar atb={'Chakra'} />
+              <AtributesChar atb={'Canalização'} />
+              <AtributesChar atb={'Controle'} />
+              <AtributesChar atb={'Percepção'} />
             </div>
-            <Specs /> 
-            <Percs /> 
+            <Specs />
+            <Percs />
           </div>
         </Box>
       </Container>
