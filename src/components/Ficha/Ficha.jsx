@@ -90,7 +90,7 @@ export default function Ficha() {
   return (
     <div>
 
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ minWidth: 300, minHeight: 380 }}>
         <CardMedia
           sx={{ height: 140 }}
           image={pergaminho}
@@ -108,34 +108,6 @@ export default function Ficha() {
                   {clans.map(clan => (
                     <MenuItem key={clan} value={clan}>
                       {clan}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-              <Button size="small">Add</Button>
-            </Box>
-
-            <Box display="flex" alignItems="center">
-              <InputLabel className='input__spec'>Especialização:</InputLabel>
-              <FormControl>
-                <Select size="small" value={spec} onChange={handleChangeSpec}>
-                  {specs.map(spec => (
-                    <MenuItem key={spec} value={spec}>
-                      {spec}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-              <Button size="small">Add</Button>
-            </Box>
-
-            <Box display="flex" alignItems="center">
-              <InputLabel className='input__pericia'>Perícia: </InputLabel>
-              <FormControl>
-                <Select size="small" value={pericia} onChange={handleChangePericia}>
-                  {pericias.map(pericia => (
-                    <MenuItem key={pericia} value={pericia}>
-                      {pericia}
                     </MenuItem>
                   ))}
                 </Select>
