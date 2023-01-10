@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import './Atributes.css'
+import './AtributesChar.css'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';

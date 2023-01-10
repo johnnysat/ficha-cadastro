@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AtributesChar from '../Atributes/Atributes'
+import AtributesChar from '../AtributesChar/AtributesChar'
 import Specs from '../Specs/Specs'
 import Percs from '../Percs/Percs'
 import CssBaseline from '@mui/material/CssBaseline';
