@@ -16,19 +16,9 @@ import pergaminho from '../../images/pergaminho_naruto.png';
 
 export default function Ficha() {
   const [clan, setClan] = React.useState('');
-  const [spec, setSpec] = React.useState('');
-  const [pericia, setPericia] = React.useState('');
 
   const handleChangeClan = (event) => {
     setClan(event.target.value);
-  };
-
-  const handleChangeSpec = (event) => {
-    setSpec(event.target.value);
-  };
-
-  const handleChangePericia = (event) => {
-    setPericia(event.target.value);
   };
 
   const clans = [

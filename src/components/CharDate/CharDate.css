@@ -9,7 +9,12 @@
   justify-content: space-between;
 }
 
-.continaer__body {
+.rank__char {
+  width: 100%;
+  align-items: center;
+}
+
+.container__body {
   display: flex;
 }
 

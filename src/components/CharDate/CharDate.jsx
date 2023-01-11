@@ -42,7 +42,7 @@ export default function CharDate() {
         <Box className="container__box" sx={{ bgcolor: '#', height: '61vh' }}>
           <div className="container__header">
 
-            <FormControl>
+            <FormControl className="rank__char">
               <FormLabel id="demo-row-radio-buttons-group-label">Rank</FormLabel>
               <RadioGroup
                 row
