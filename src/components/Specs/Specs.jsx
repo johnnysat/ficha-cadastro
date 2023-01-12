@@ -23,6 +23,8 @@ const specs = [
   'Fuuinjutsu',
 ];
 
+const selectLimit = 4;
+
 export default function Specs() {
   const [spec, setSpec] = React.useState('Nenhuma');
   const [addedSelects, setAddedSelects] = React.useState([]);
@@ -32,7 +34,11 @@ export default function Specs() {
   };
 
   const handleAddSelect = () => {
-    setAddedSelects([...addedSelects, {}]);
+    if (addedSelects.length < selectLimit) {
+      setAddedSelects([...addedSelects, {}]);
+    } else {
+      alert(`The limit is ${selectLimit} select elements`);
+    }
   };
 
   const handleRemoveSelect = (index) => {
@@ -58,7 +64,7 @@ export default function Specs() {
               ))}
             </Select>
           </FormControl>
-          <Button size="small" className="button__spec" onClick={handleAddSelect}>+</Button>
+          <Button size="small" className="button__spec" onClick={handleAddSelect} disabled={addedSelects.length >= selectLimit}>+</Button>
         </Box>
         {addedSelects.map((select, index) => (
           <Box display="flex" alignItems="center" key={index}>
@@ -69,10 +75,9 @@ export default function Specs() {
                     {spec}
                   </MenuItem>
                 ))}
-              </Select>
+                            </Select>
             </FormControl>
             <Button size="small" className="button__spec" onClick={() => handleRemoveSelect(index)}>-</Button>
-            <Button size="small" className="button__spec" onClick={handleAddSelect}>+</Button>
           </Box>
         ))}
       </CardContent>
@@ -85,3 +90,4 @@ export default function Specs() {
     </Box>
   );
 }
+
