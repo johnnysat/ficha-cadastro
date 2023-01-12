@@ -57,7 +57,7 @@ export default function Ficha() {
                 <Box display="flex">
               <InputLabel  className='input__clan'>Clã: </InputLabel>
               <FormControl>
-                <Select size="small" value={clan} onChange={handleChangeClan}>
+                <Select sx={{width: 110}} size="small" value={clan} onChange={handleChangeClan}>
                   {clans.map(clan => (
                     <MenuItem key={clan} value={clan}>
                       {clan}
