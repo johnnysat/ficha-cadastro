@@ -40,7 +40,7 @@ export default function Ficha() {
   return (
     <div>
 
-      <Card sx={{ maxWidth: 300, minHeight: 380 }}>
+      <Card sx={{ height: '70vh', minHeight: 380 }}>
         <CardMedia
           sx={{ height: 140 }}
           image={pergaminho}
@@ -70,11 +70,6 @@ export default function Ficha() {
             </Box>
           </Typography>
         </CardContent>
-
-        <CardActions className="card__button">
-          <Button size="small">Atualizar</Button>
-          <Button size="small">Limpar</Button>
-        </CardActions>
 
       </Card>
 

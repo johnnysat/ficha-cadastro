@@ -22,37 +22,65 @@ const specs = [
   'Suiton',
   'Fuuinjutsu',
 ];
+
 export default function Specs() {
   const [spec, setSpec] = React.useState('Nenhuma');
+  const [addedSelects, setAddedSelects] = React.useState([]);
+
   const handleChangeSpec = (event) => {
     setSpec(event.target.value);
   };
 
+  const handleAddSelect = () => {
+    setAddedSelects([...addedSelects, {}]);
+  };
+
+  const handleRemoveSelect = (index) => {
+    const newAddedSelects = [...addedSelects];
+    newAddedSelects.splice(index, 1);
+    setAddedSelects(newAddedSelects);
+  };
+
   const card = (
     <React.Fragment>
-      <CardContent>
-      <Typography variant="h5" component="div">
+      <CardContent sx={{ minHeight: 280, maxHeight: 280 }}>
+        <Typography variant="h5" component="div">
           Especialização
         </Typography>
-      <Box display="flex" alignItems="center">
-              <InputLabel className='input__spec'></InputLabel>
-              <FormControl>
-                <Select size="small" value={spec} onChange={handleChangeSpec}>
-                  {specs.map(spec => (
-                    <MenuItem key={spec} value={spec}>
-                      {spec}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-              <Button size="small">Add</Button>
-            </Box>
+        <Box display="flex" alignItems="center">
+          <InputLabel></InputLabel>
+          <FormControl>
+            <Select className='input__spec' size="small" value={spec} onChange={handleChangeSpec}>
+              {specs.map(spec => (
+                <MenuItem key={spec} value={spec}>
+                  {spec}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <Button size="small" className="button__spec" onClick={handleAddSelect}>+</Button>
+        </Box>
+        {addedSelects.map((select, index) => (
+          <Box display="flex" alignItems="center" key={index}>
+            <FormControl>
+              <Select className='input__spec' size="small">
+                {specs.map(spec => (
+                  <MenuItem key={spec} value={spec}>
+                    {spec}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <Button size="small" className="button__spec" onClick={() => handleRemoveSelect(index)}>-</Button>
+            <Button size="small" className="button__spec" onClick={handleAddSelect}>+</Button>
+          </Box>
+        ))}
       </CardContent>
     </React.Fragment>
   );
 
   return (
-<Box sx={{ width: 250, display: 'inline-block', position: 'absolute', top: 165, right: 350 }}>
+    <Box sx={{ width: 250, display: 'inline-block', position: 'absolute', top: 165, right: 350 }}>
       <Card variant="outlined">{card}</Card>
     </Box>
   );

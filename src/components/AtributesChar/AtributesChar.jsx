@@ -12,7 +12,7 @@ export default function AtributesChar({ atb }) {
   const handleIncrement = () => {
     if (points <= 10){
     setPoints(points + 1);
-    }
+    } 
   };
 
   const handleDecrement = () => {
