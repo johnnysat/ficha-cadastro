@@ -64,7 +64,7 @@ export default function Specs() {
               ))}
             </Select>
           </FormControl>
-          <Button size="small" onClick={handleAddSelect} disabled={addedSelects.length >= selectLimit}>+</Button>
+          <Button size="small"onClick={handleAddSelect} disabled={addedSelects.length >= selectLimit}>+</Button>
         </Box>
         {addedSelects.map((select, index) => (
           <Box display="flex" alignItems="center" key={index}>

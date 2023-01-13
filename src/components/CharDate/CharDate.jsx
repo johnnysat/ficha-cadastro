@@ -14,26 +14,31 @@ import './CharDate.css'
 
 
 
-export default function CharDate() {
+export default function CharDate(props) {
   const [rank, setRank] = useState('Gennin');
   const [attributesTotal, setAttributesTotal] = useState(16);
+  const [specTotal, setSpecTotal] = useState(3);
 
   function handleRankChange(event) {
     setRank(event.target.value);
 
     if (event.target.value === 'Gennin') {
       setAttributesTotal(16);
+      setSpecTotal(1);
     } else if (event.target.value === 'Chunnin') {
       setAttributesTotal(26);
+      setSpecTotal(1);
     } else if (event.target.value === 'Jounnin') {
       setAttributesTotal(36);
+      setSpecTotal(2);
     } else if (event.target.value === 'Tokubetsu') {
       setAttributesTotal(46);
+      setSpecTotal(3);
     } else if (event.target.value === 'Sannin') {
       setAttributesTotal(56);
+      setSpecTotal(4);
     }
   }
-
 
   return (
     <React.Fragment>
@@ -69,7 +74,7 @@ export default function CharDate() {
               <AtributesChar atb={'Controle'} />
               <AtributesChar atb={'Percepção'} />
             </div>
-            <Specs />
+            <Specs selectLimit={specTotal} />
             <Percs />
           </div>
         </Box>
