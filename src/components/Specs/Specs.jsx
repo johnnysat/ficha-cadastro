@@ -21,6 +21,8 @@ const specs = [
   'Raiton',
   'Suiton',
   'Fuuinjutsu',
+  'Kuchiyose',
+  'Bijuu',
 ];
 
 const selectLimit = 4;
@@ -75,7 +77,7 @@ export default function Specs() {
                     {spec}
                   </MenuItem>
                 ))}
-                            </Select>
+              </Select>
             </FormControl>
             <Button size="small" className="button__spec" onClick={() => handleRemoveSelect(index)}>-</Button>
           </Box>
