@@ -38,8 +38,6 @@ export default function Specs() {
   const handleAddSelect = () => {
     if (addedSelects.length < selectLimit) {
       setAddedSelects([...addedSelects, {}]);
-    } else {
-      alert(`The limit is ${selectLimit} select elements`);
     }
   };
 
@@ -51,7 +49,7 @@ export default function Specs() {
 
   const card = (
     <React.Fragment>
-      <CardContent sx={{ minHeight: 280, maxHeight: 280 }}>
+      <CardContent sx={{ minHeight: 230, maxHeight: 'auto' }}>
         <Typography variant="h5" component="div">
           Especialização
         </Typography>
@@ -66,7 +64,7 @@ export default function Specs() {
               ))}
             </Select>
           </FormControl>
-          <Button size="small" className="button__spec" onClick={handleAddSelect} disabled={addedSelects.length >= selectLimit}>+</Button>
+          <Button size="small" onClick={handleAddSelect} disabled={addedSelects.length >= selectLimit}>+</Button>
         </Box>
         {addedSelects.map((select, index) => (
           <Box display="flex" alignItems="center" key={index}>
@@ -79,7 +77,7 @@ export default function Specs() {
                 ))}
               </Select>
             </FormControl>
-            <Button size="small" className="button__spec" onClick={() => handleRemoveSelect(index)}>-</Button>
+            <Button size="small" onClick={() => handleRemoveSelect(index)}>-</Button>
           </Box>
         ))}
       </CardContent>

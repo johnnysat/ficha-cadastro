@@ -38,24 +38,38 @@ const pericias = [
   'Tecnologia',
 ];
 
+const selectLimit = 4;
+
 export default function Percs() {
   const [pericia, setPericia] = React.useState('Nenhuma');
+  const [addedSelects, setAddedSelects] = React.useState([]);
 
   const handleChangePericia = (event) => {
     setPericia(event.target.value);
   };
 
+  const handleAddSelect = () => {
+    if (addedSelects.length < selectLimit) {
+      setAddedSelects([...addedSelects, {}]);
+    }
+  };
+
+  const handleRemoveSelect = (index) => {
+    const newAddedSelects = [...addedSelects];
+    newAddedSelects.splice(index, 1);
+    setAddedSelects(newAddedSelects);
+  };
+
   const card = (
     <React.Fragment>
-      <CardContent>
+      <CardContent sx={{ minHeight: 230, maxHeight: 'auto' }}>
         <Typography variant="h5" component="div">
           Perícias
         </Typography>
-        <Typography variant="body2">
           <Box display="flex" alignItems="center">
             <InputLabel className='input__pericia'></InputLabel>
             <FormControl>
-              <Select size="small" value={pericia} onChange={handleChangePericia}>
+              <Select size="small" className='input__perc' value={pericia} onChange={handleChangePericia}>
                 {pericias.map(pericia => (
                   <MenuItem key={pericia} value={pericia}>
                     {pericia}
@@ -63,9 +77,22 @@ export default function Percs() {
                 ))}
               </Select>
             </FormControl>
-            <Button size="small">Add</Button>
+            <Button size="small" onClick={handleAddSelect} disabled={addedSelects.length >= selectLimit}>+</Button>
+        </Box>
+        {addedSelects.map((select, index) => (
+          <Box display="flex" alignItems="center" key={index}>
+            <FormControl>
+              <Select className='input__spec' size="small">
+                {pericias.map(pericia => (
+                  <MenuItem key={pericia} value={pericia}>
+                    {pericia}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <Button size="small" onClick={() => handleRemoveSelect(index)}>-</Button>
           </Box>
-        </Typography>
+        ))}
       </CardContent>
     </React.Fragment>
   );
