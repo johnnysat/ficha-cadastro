@@ -66,6 +66,7 @@ export default function CharDate(props) {
             </FormControl>
           </div>
           <div className="container__body">
+            <h1>Nome do Personagem</h1>
             <div className="atributes__char">
               <AtributesChar atb={'Força'} />
               <AtributesChar atb={'Destreza'} />
