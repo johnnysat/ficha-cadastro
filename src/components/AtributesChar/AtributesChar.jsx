@@ -6,19 +6,23 @@ import ListItemText from '@mui/material/ListItemText';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
-export default function AtributesChar({ atb }) {
-  const [points, setPoints] = useState(1);
+export default function AtributesChar({ atb, attributesTotal, setAttributesTotal, maxAttributes }) {
+  const [points, setPoints] = useState(0);
 
   const handleIncrement = () => {
-    if (points <= 10){
+    if (points <= 10 && attributesTotal < maxAttributes){
     setPoints(points + 1);
+    setAttributesTotal(attributesTotal + 1);
     } 
   };
 
   const handleDecrement = () => {
-    if (points >= 2)
+    if (points >= 1) {
     setPoints(points - 1);
+    setAttributesTotal(attributesTotal - 1);
+    }
   };
+
 
   return (
     <>

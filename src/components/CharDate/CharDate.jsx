@@ -10,32 +10,34 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import Typography from '@mui/material/Typography';
 import './CharDate.css'
 
 
 
 export default function CharDate(props) {
   const [rank, setRank] = useState('Gennin');
-  const [attributesTotal, setAttributesTotal] = useState(16);
+  const [attributesTotal, setAttributesTotal] = useState(0);
+  const [maxAttributes, setMaxAttributes] = useState(0);
   const [specTotal, setSpecTotal] = useState(3);
 
   function handleRankChange(event) {
     setRank(event.target.value);
 
     if (event.target.value === 'Gennin') {
-      setAttributesTotal(16);
+      setMaxAttributes(16);
       setSpecTotal(1);
     } else if (event.target.value === 'Chunnin') {
-      setAttributesTotal(26);
+      setMaxAttributes(26);
       setSpecTotal(1);
     } else if (event.target.value === 'Jounnin') {
-      setAttributesTotal(36);
+      setMaxAttributes(36);
       setSpecTotal(2);
     } else if (event.target.value === 'Tokubetsu') {
-      setAttributesTotal(46);
+      setMaxAttributes(46);
       setSpecTotal(3);
     } else if (event.target.value === 'Sannin') {
-      setAttributesTotal(56);
+      setMaxAttributes(56);
       setSpecTotal(4);
     }
   }
@@ -62,18 +64,17 @@ export default function CharDate(props) {
                 <FormControlLabel value="Tokubetsu" control={<Radio />} label="Tokubetsu" />
                 <FormControlLabel value="Sannin" control={<Radio />} label="Sannin" />
               </RadioGroup>
-              <p>Pontos: Pontos/{attributesTotal}</p>
+              <Typography>{attributesTotal} / {maxAttributes}</Typography>
             </FormControl>
           </div>
           <div className="container__body">
-            <h1>Nome do Personagem</h1>
             <div className="atributes__char">
-              <AtributesChar atb={'Força'} />
-              <AtributesChar atb={'Destreza'} />
-              <AtributesChar atb={'Chakra'} />
-              <AtributesChar atb={'Canalização'} />
-              <AtributesChar atb={'Controle'} />
-              <AtributesChar atb={'Percepção'} />
+              <AtributesChar atb="Força" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
+              <AtributesChar atb="Destreza" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
+              <AtributesChar atb="Chakra" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
+              <AtributesChar atb="Canalização" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
+              <AtributesChar atb="Controle" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
+              <AtributesChar atb="Percepção" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
             </div>
             <Specs selectLimit={specTotal} />
             <Percs />

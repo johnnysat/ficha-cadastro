@@ -22,6 +22,7 @@ const specs = [
   'Suiton',
   'Fuuinjutsu',
   'Kuchiyose',
+  'Kekkei Genkai',
   'Bijuu',
 ];
 
