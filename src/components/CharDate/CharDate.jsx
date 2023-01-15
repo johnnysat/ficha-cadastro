@@ -18,7 +18,7 @@ import './CharDate.css'
 export default function CharDate(props) {
   const [rank, setRank] = useState('Gennin');
   const [attributesTotal, setAttributesTotal] = useState(0);
-  const [maxAttributes, setMaxAttributes] = useState(0);
+  const [maxAttributes, setMaxAttributes] = useState(16);
   const [specTotal, setSpecTotal] = useState(3);
 
   function handleRankChange(event) {
