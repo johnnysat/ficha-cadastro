@@ -39,7 +39,7 @@ const pericias = [
 
 const selectLimit = 4;
 
-export default function Percs() {
+export default function Percs({ maxPercs = 0 }) {
   const [pericia, setPericia] = React.useState('Nenhuma');
   const [addedSelects, setAddedSelects] = React.useState([]);
 
@@ -48,15 +48,17 @@ export default function Percs() {
   };
 
   const handleAddSelect = () => {
-    if (addedSelects.length < selectLimit) {
+    if (addedSelects.length < maxPercs) {
       setAddedSelects([...addedSelects, {}]);
     }
   };
 
   const handleRemoveSelect = (index) => {
-    const newAddedSelects = [...addedSelects];
-    newAddedSelects.splice(index, 1);
-    setAddedSelects(newAddedSelects);
+    if (addedSelects.length > 0) {
+      const newAddedSelects = [...addedSelects];
+      newAddedSelects.splice(index, 1);
+      setAddedSelects(newAddedSelects);
+    }
   };
 
   const card = (

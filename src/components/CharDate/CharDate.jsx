@@ -20,6 +20,7 @@ export default function CharDate(props) {
   const [attributesTotal, setAttributesTotal] = useState(0);
   const [maxAttributes, setMaxAttributes] = useState(16);
   const [maxSpecs, setMaxSpecs] = useState(1);
+  const [maxPercs, setMaxPercs] = useState(0);
 
   function handleRankChange(event) {
     setRank(event.target.value);
@@ -27,18 +28,23 @@ export default function CharDate(props) {
     if (event.target.value === 'Gennin') {
       setMaxAttributes(16);
       setMaxSpecs(1);
+      setMaxPercs(0);
     } else if (event.target.value === 'Chunnin') {
       setMaxAttributes(26);
       setMaxSpecs(1);
+      setMaxPercs(1);
     } else if (event.target.value === 'Jounnin') {
       setMaxAttributes(36);
       setMaxSpecs(2);
+      setMaxPercs(2);
     } else if (event.target.value === 'Tokubetsu') {
       setMaxAttributes(46);
       setMaxSpecs(3);
+      setMaxPercs(3);
     } else if (event.target.value === 'Sannin') {
       setMaxAttributes(56);
       setMaxSpecs(4);
+      setMaxPercs(4);
     }
   }
 
@@ -77,7 +83,7 @@ export default function CharDate(props) {
               <AtributesChar atb="Percepção" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
             </div>
             <Specs maxSpecs={maxSpecs} />
-            <Percs />
+            <Percs maxPercs={maxPercs} />
           </div>
         </Box>
       </Container>
