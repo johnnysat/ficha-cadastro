@@ -28,7 +28,7 @@ const specs = [
 
 const selectLimit = 4;
 
-export default function Specs() {
+export default function Specs({ maxSpecs = 2 }) {
   const [spec, setSpec] = React.useState('Nenhuma');
   const [addedSelects, setAddedSelects] = React.useState([]);
 
@@ -37,15 +37,17 @@ export default function Specs() {
   };
 
   const handleAddSelect = () => {
-    if (addedSelects.length < selectLimit) {
+    if (addedSelects.length < maxSpecs) {
       setAddedSelects([...addedSelects, {}]);
     }
   };
 
   const handleRemoveSelect = (index) => {
-    const newAddedSelects = [...addedSelects];
-    newAddedSelects.splice(index, 1);
-    setAddedSelects(newAddedSelects);
+    if (addedSelects.length > 0) {
+      const newAddedSelects = [...addedSelects];
+      newAddedSelects.splice(index, 1);
+      setAddedSelects(newAddedSelects);
+    }
   };
 
   const card = (

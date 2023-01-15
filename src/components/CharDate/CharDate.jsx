@@ -19,26 +19,26 @@ export default function CharDate(props) {
   const [rank, setRank] = useState('Gennin');
   const [attributesTotal, setAttributesTotal] = useState(0);
   const [maxAttributes, setMaxAttributes] = useState(16);
-  const [specTotal, setSpecTotal] = useState(3);
+  const [maxSpecs, setMaxSpecs] = useState(1);
 
   function handleRankChange(event) {
     setRank(event.target.value);
 
     if (event.target.value === 'Gennin') {
       setMaxAttributes(16);
-      setSpecTotal(1);
+      setMaxSpecs(1);
     } else if (event.target.value === 'Chunnin') {
       setMaxAttributes(26);
-      setSpecTotal(1);
+      setMaxSpecs(1);
     } else if (event.target.value === 'Jounnin') {
       setMaxAttributes(36);
-      setSpecTotal(2);
+      setMaxSpecs(2);
     } else if (event.target.value === 'Tokubetsu') {
       setMaxAttributes(46);
-      setSpecTotal(3);
+      setMaxSpecs(3);
     } else if (event.target.value === 'Sannin') {
       setMaxAttributes(56);
-      setSpecTotal(4);
+      setMaxSpecs(4);
     }
   }
 
@@ -76,7 +76,7 @@ export default function CharDate(props) {
               <AtributesChar atb="Controle" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
               <AtributesChar atb="Percepção" attributesTotal={attributesTotal} setAttributesTotal={setAttributesTotal} maxAttributes={maxAttributes}/>
             </div>
-            <Specs selectLimit={specTotal} />
+            <Specs maxSpecs={maxSpecs} />
             <Percs />
           </div>
         </Box>
