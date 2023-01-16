@@ -5,6 +5,10 @@
 }
 
 .App {
+  align-items: center;
+}
+
+.body__app {
   margin: 30px;
   text-align: center;
   display: flex;
