@@ -40,7 +40,7 @@ export default function Ficha() {
   return (
     <div>
 
-      <Card sx={{ height: '70vh', minHeight: 380 }}>
+      <Card sx={{ height: '75vh', minHeight: 380 }}>
         <CardMedia
           sx={{ height: 140 }}
           image={pergaminho}

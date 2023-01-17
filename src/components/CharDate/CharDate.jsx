@@ -52,7 +52,7 @@ export default function CharDate(props) {
     <React.Fragment>
       <CssBaseline />
       <Container fixed>
-        <Box className="container__box" sx={{ height: '70vh' }}>
+        <Box className="container__box" sx={{ height: '75vh' }}>
           <div className="container__header">
 
             <FormControl className="rank__char">
