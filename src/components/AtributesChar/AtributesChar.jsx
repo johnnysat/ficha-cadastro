@@ -102,8 +102,8 @@ export default function AtributesChar({ atb, realAtb, attributesTotal, setAttrib
               aria-label="Disabled elevation buttons"
               size="small"
             >
-              <Button onClick={handleDecrement}>-</Button>
-              <Button onClick={handleIncrement}>+</Button>
+              <Button className="buttons_atributes" onClick={handleDecrement}>-</Button>
+              <Button className="buttons_atributes" onClick={handleIncrement}>+</Button>
             </ButtonGroup>
           </ListItem>
         </ListItem>
